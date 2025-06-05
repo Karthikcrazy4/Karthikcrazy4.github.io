@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+      <script>
+        function add(a, b) {
+            return a + b;
+        }
+
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function divide(a, b) {
+            return a / b;
+        }
+
+        function calc() {
+            const num1 = Number(document.getElementById('inputa').value);
+            const num2 = Number(document.getElementById('inputb').value);
+            alert("Add: " + add(num1, num2) );
+            alert("Sub: " + subtract(num1, num2));
+            alert("Mul: " + multiply(num1, num2));
+            alert("Div: " + divide(num1, num2));
+        }
+    </script>
+</head>
+<body>
+    <h1>Calc</h1>
+    <input type="number" id="inputa" />
+    <input type="number" id="inputb" />
+    <button onclick= calc() style="background-color: yellow;">Calc</button> 
+</body>
+</html>

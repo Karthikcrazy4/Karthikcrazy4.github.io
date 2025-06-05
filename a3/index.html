@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function greet() {
+            alert(txtname.value);
+        }
+        function sum() {
+            let num1 = parseInt(document.getElementById("txtname1").value);
+            let num2 = parseInt(document.getElementById("txtname2").value);
+            let result = num1 + num2;
+            alert("The sum is: " + result);
+        }
+    </script>
+</head>
+<body>
+    <input type="text"  id="txtname1">
+    <input type="text"  id="txtname2">
+    <button onclick="sum()" style = color:aqua> Click Me!</button>
+</body>
+</html>

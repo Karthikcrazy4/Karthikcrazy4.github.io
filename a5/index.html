@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form</title>
+</head>
+<body>
+
+  <form onsubmit="showData(this); return false;">
+    <input type="text" name="input1" placeholder="name"><br><br>
+    <input type="email" name="input2" placeholder="email"><br><br>
+    <input type="password" name="input3" placeholder="password"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="output"></p>
+
+  <script>
+    function showData(form) {
+      const a = form.input1.value;
+      const b = form.input2.value;
+      const c = form.input3.value;
+      document.querySelector("#output").innerText = a + ", " + b + ", " + c;
+    }
+  </script>
+
+</body>
+</html>
