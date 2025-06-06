@@ -5,12 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fruit List</title>
     <script>
-      const fruits = [];
+      let fruits = [];
+      function del(value) {
+        fruits = fruits.filter((e) => e != value);
+        dispFruits();
+      }
+      function search() {
+        const input = document.getElementById("txt1").value;
+        const filtered = fruits.filter((e) => e === input);
+        let listHTML = filtered
+          .map(
+            (fruit) =>
+              `<li>${fruit}<button onclick=del('${fruit}')>Delete</button></li>`
+          )
+          .join("");
+        document.getElementById("fruitList").innerHTML = listHTML;
+      }
+      function dispFruits() {
+        let listHTML = fruits
+          .map(
+            (fruit) =>
+              `<li>${fruit}<button onclick=del('${fruit}')>Delete</button></li>`
+          )
+          .join("");
+        document.getElementById("fruitList").innerHTML = listHTML;
+      }
       function add() {
         const input = document.getElementById("txt1").value;
         fruits.push(input);
-        const listHTML = fruits.map((fruit) => `<li>${fruit}</li>`).join("");
-        document.getElementById("fruitList").innerHTML = listHTML;
+        dispFruits();
       }
     </script>
   </head>
@@ -18,6 +41,7 @@
     <div>
       <h1>Fruit List</h1>
       <input type="text" id="txt1" />
+      <button onclick="search()">Search</button>
       <button onclick="add()">Add</button>
       <ul id="fruitList"></ul>
     </div>
