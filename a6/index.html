@@ -3,37 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FRUITS LIST </title>
+    <title>Fruit List</title>
+    <script>
+      const fruits = [];
+      function add() {
+        const input = document.getElementById("txt1").value;
+        fruits.push(input);
+        const listHTML = fruits.map((fruit) => `<li>${fruit}</li>`).join("");
+        document.getElementById("fruitList").innerHTML = listHTML;
+      }
+    </script>
   </head>
   <body>
-    <h1>fruit list</h1>
-    <button onclick="addFruit()">Add</button>
-    <p id="fruitDisplay"></p>
-
-    <script>
-        const fruits = ["apple", "mango", "orange"];
-        const newFruits = [];
-        let currentIndex = 0;
-        console.log(fruits[0]);
-        fruits.push("banana");
-        console.log(fruits);
-        fruits.pop();
-        console.log(fruits);
-        console.log(fruits.length);
-        for (let i = 0; i < fruits.length; i++) {
-          console.log(fruits[i]);
-        }
-        fruits.forEach((fruit) => console.log(fruit));
-
-        function addFruit() {
-            if (currentIndex < fruits.length) {
-                newFruits.push(fruits[currentIndex]);
-                currentIndex++;
-                document.getElementById("fruitDisplay").textContent = "New Array: " + newFruits.join(", ");
-            } else {
-                document.getElementById("fruitDisplay").textContent = "All fruits have been added! New Array: " + newFruits.join(", ");
-            }
-        }
-    </script>
+    <div>
+      <h1>Fruit List</h1>
+      <input type="text" id="txt1" />
+      <button onclick="add()">Add</button>
+      <ul id="fruitList"></ul>
+    </div>
   </body>
 </html>
