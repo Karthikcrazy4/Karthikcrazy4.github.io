@@ -1,0 +1,21 @@
+.App-Header-Row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+.App-Header-Row h1 {
+    font-size: 24px;
+    color: #343a40;
+    padding: 10px;
+}
+.App-Header-Row li {
+    list-style: none;
+    margin: 0 10px;
+}
+.App-Header-Nav{
+    display: flex;
+    align-items: center;
+    color:black
+}
